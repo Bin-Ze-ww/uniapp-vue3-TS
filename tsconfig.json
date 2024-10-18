@@ -6,19 +6,22 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     },
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types",
-              "miniprogram-api-typings",
-              "@uni-helper/uni-app-types",
-              "@uni-helper/uni-ui-types" // uni-ui 组件类型
-
-            ]
+    "resolveJsonModule": true,
+    "types": [
+      "@dcloudio/types",
+      "miniprogram-api-typings",
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-ui-types"
+    ]
   },
   "vueCompilerOptions": {
-    // experimentalRuntimeMode 已废弃，现调整为 nativeTags，请升级 Volar 插件至最新版本
     "nativeTags": ["block", "component", "template", "slot"]
   },
+  "exclude": ["node_modules", "unpackage", "src/**/*.nvue"],
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
